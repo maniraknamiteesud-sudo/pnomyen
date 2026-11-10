@@ -118,7 +118,7 @@ textarea{min-height:130px;resize:vertical}
 <script type="module">
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import {getAuth,signInAnonymously,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-import {getFirestore,collection,doc,getDoc,setDoc,deleteDoc,onSnapshot} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import {getFirestore,collection,doc,getDoc,setDoc,deleteDoc,writeBatch,onSnapshot} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 // ====== ใส่ค่าจาก Firebase Console (Project settings > Your apps > Web) ======
 const firebaseConfig={apiKey:"AIzaSyCAc6hX55jK1fWKBX5mfXyrkaDf04f8rAs",authDomain:"mani-fe0aa.firebaseapp.com",projectId:"mani-fe0aa",storageBucket:"mani-fe0aa.firebasestorage.app",messagingSenderId:"200209910010",appId:"1:200209910010:web:00ae7f237b1202557ba143"};
 // ============================================================================
@@ -169,14 +169,14 @@ function render(){
   const g=$('#grid'),e=$('#empty');
   $('#nm').textContent='🎀 '+cfg.name+' 🎀';document.title='Congratulations '+cfg.name+' 🎓';
   const unread=letters.filter(l=>!isRead(l)).length;
-  $('#sub').textContent=letters.length?`มีจดหมาย ${letters.length} ฉบับ · ยังไม่ได้เปิด ${unread} ฉบับ 💌`:'ฝากความรักและคำอวยพรไว้ในซองจดหมาย 💌';
+  $('#sub').textContent=isAdmin?(letters.length?`มีจดหมาย ${letters.length} ฉบับ · ยังไม่ได้เปิด ${unread} ฉบับ 💌`:'ยังไม่มีจดหมายเข้ามา 💌'):(letters.length?`มีจดหมายแล้ว ${letters.length} ฉบับ 💌 เนื้อหาเป็นความลับ พี่นมเท่านั้นที่เปิดอ่านได้`:'ฝากความรักและคำอวยพรไว้ในซองจดหมาย 💌 (พี่นมเท่านั้นที่เปิดอ่านได้)');
   const mine=letters.find(l=>l.id===uid);
   $('#bar').innerHTML=(db&&uid?`<button class="btn" id="wr">${mine?'✏️ แก้ไขจดหมายของฉัน':'💌 เขียนจดหมาย'}</button>`:(db&&authError?`<div class="note" style="max-width:420px">⚠️ เขียนจดหมายยังไม่ได้: ${esc(authError)}</div>`:''));
-  if($('#wr'))$('#wr').onclick=()=>editor(mine);
+  if($('#wr'))$('#wr').onclick=async()=>{if(!mine)return editor();try{const c=(await getDoc(doc(db,'contents',uid))).data()||{};editor({...mine,...c})}catch(e){toast('โหลดจดหมายไม่ได้')}};
   e.hidden=!!letters.length;
-  if(!letters.length)e.textContent=ready?'ยังไม่มีจดหมาย มาเป็นคนแรกกันเถอะ 🌷':'กำลังโหลด… 🌸';
-  g.innerHTML=letters.map((l,i)=>{const r=isRead(l);return `<div class="cell">${r?'':'<span class="new">ใหม่!</span>'}
-  <div class="sway" style="--d:-${(i*0.7)%4}s"><button class="env ${r?'open':''}" data-o="${esc(l.id)}" aria-label="จดหมายจาก ${esc(l.sender)}"><div class="body"></div><div class="paper"></div><i class="f1"></i><i class="f2"></i><i class="f3"></i><div class="flap"></div><div class="seal">♥</div>${(l.stickers||[])[0]?`<span class="stk">${l.stickers[0]}</span>`:''}</button></div>
+  if(!letters.length)e.textContent=ready?(isAdmin?'ยังไม่มีจดหมายเข้ามา 🌷':'มาเป็นคนแรกที่เขียนจดหมายถึงพี่นมกันเถอะ 🌷'):'กำลังโหลด… 🌸';
+  g.innerHTML=letters.map((l,i)=>{const r=isRead(l);return `<div class="cell">${(r||!isAdmin)?'':'<span class="new">ใหม่!</span>'}
+  <div class="sway" style="--d:-${(i*0.7)%4}s"><button class="env ${r?'open':''}" data-o="${esc(l.id)}" aria-label="จดหมายจาก ${esc(l.sender)}"><div class="body"></div><div class="paper"></div><i class="f1"></i><i class="f2"></i><i class="f3"></i><div class="flap"></div><div class="seal">♥</div>${l.stk?`<span class="stk">${esc(l.stk)}</span>`:''}</button></div>
   <div class="from">💌 จาก ${esc(l.sender)}</div>
   ${isAdmin?`<button class="mini del" data-d="${esc(l.id)}">${armed===l.id?'แตะอีกครั้งเพื่อลบ':'🗑 ลบ'}</button>`:''}</div>`}).join('');
   g.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>openLetter(b.dataset.o));
@@ -190,7 +190,11 @@ function letterHTML(l){
   return `<div class="letter" style="background-color:${esc(l.paper||'#fff')}">${st}<div class="to">ถึง ${esc(cfg.name)} 💕</div><div class="msg">${esc(l.msg)}</div>${ph}<div class="div">♡ ♡ ♡</div>${m}${bouquet(l.flowers)}<div class="sig"><b>${esc(l.sender)}</b> 🌷</div></div>`}
 function showModal(inner){const m=$('#modal');m.innerHTML=`<div class="ov"><div class="sheet"><button class="x" aria-label="ปิด">×</button>${inner}</div></div>`;m.querySelector('.x').onclick=closeM;m.querySelector('.ov').onclick=e=>{if(e.target.classList.contains('ov')&&!m.querySelector('[data-edit]'))closeM()}}
 function closeM(){$('#modal').innerHTML=''}
-function openLetter(id){const l=letters.find(x=>x.id===id);if(!l)return;readMap[id]=l.ts||0;saveRead();showModal(letterHTML(l));render()}
+async function openLetter(id){const l=letters.find(x=>x.id===id);if(!l)return;
+  if(!isAdmin&&id!==uid){showModal(`<div style="text-align:center;padding:28px 10px 14px"><div style="font-size:56px">🔒</div><p style="font-size:17px">จดหมายจาก <b>${esc(l.sender)}</b><br>เป็นความลับ พี่นมเท่านั้นที่เปิดอ่านได้ 💗</p></div>`);return}
+  let c;try{c=(await getDoc(doc(db,'contents',id))).data()}catch(e){toast('เปิดจดหมายไม่ได้');return}
+  if(!c){toast('ไม่พบเนื้อหาจดหมาย');return}
+  readMap[id]=l.ts||0;saveRead();showModal(letterHTML({...l,...c}));render()}
 function editor(ex){
   const d=ex?JSON.parse(JSON.stringify(ex)):{sender:'',msg:'',photos:[],music:{t:'',a:'',u:''},flowers:[],stickers:[],paper:'#ffeef4'};
   d.music=d.music||{t:'',a:'',u:''};d.flowers=(d.flowers||[]).map(x=>LEG[x]||x).filter(k=>FD[k]);
@@ -230,8 +234,12 @@ function editor(ex){
 function shrink(file){return new Promise((res,rej)=>{const u=URL.createObjectURL(file),im=new Image();im.onload=()=>{const M=380,k=Math.min(1,M/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);res(c.toDataURL('image/jpeg',.55))};im.onerror=rej;im.src=u})}
 function offline(e){ready=true;$('#empty').hidden=false;$('#empty').textContent='เชื่อมต่อฐานข้อมูลไม่ได้ 🌸'+(e&&e.code?' ('+e.code+')':' (หมดเวลารอ)')}
 render();
-async function dbDelete(id){await deleteDoc(doc(db,'letters',id))}
-async function dbSaveLetter(o){await setDoc(doc(db,'letters',uid),o)}
+async function dbDelete(id){const b=writeBatch(db);b.delete(doc(db,'letters',id));b.delete(doc(db,'contents',id));await b.commit()}
+async function dbSaveLetter(o){const b=writeBatch(db);
+  b.set(doc(db,'letters',uid),{uid,sender:o.sender,ts:o.ts,stk:(o.stickers||[])[0]||''});
+  b.set(doc(db,'contents',uid),{uid,msg:o.msg,photos:o.photos,music:o.music,flowers:o.flowers,stickers:o.stickers,paper:o.paper,ts:o.ts});
+  await b.commit()}
+const tm=setTimeout(()=>{if(!ready)offline()},15000);
 async function checkAdmin(){isAdmin=false;if(uid){try{isAdmin=(await getDoc(doc(db,'admins',uid))).exists()}catch(e){}}$('#al').textContent=isAdmin?'🚪 ออกจากโหมดแอดมิน':'🔑 แอดมิน';render()}
 $('#al').textContent='🔑 แอดมิน';
 $('#al').onclick=async()=>{
@@ -249,10 +257,9 @@ au.play().catch(()=>{document.addEventListener('pointerdown',()=>{if(!userPaused
 const app=initializeApp(firebaseConfig),auth=getAuth(app);
 db=getFirestore(app);
 onAuthStateChanged(auth,u=>{uid=u?u.uid:null;checkAdmin()});
+onSnapshot(collection(db,'letters'),q=>{clearTimeout(tm);ready=true;letters=q.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.ts||0)-(b.ts||0));render()},e=>offline(e));
 (async()=>{try{await auth.authStateReady();if(!auth.currentUser)await signInAnonymously(auth)}catch(e){authError=(e&&e.code)||String(e);render()}})();
 if(location.protocol==='file:'){authError='เปิดไฟล์จากเครื่องโดยตรงไม่ได้ ต้องเปิดผ่านลิงก์ github.io';render()}
-const tm=setTimeout(()=>{if(!ready)offline()},15000);
-onSnapshot(collection(db,'letters'),q=>{clearTimeout(tm);ready=true;letters=q.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.ts||0)-(b.ts||0));render()},e=>offline(e));
 </script>
 </body>
 </html>
