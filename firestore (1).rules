@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // แอดมิน = คนที่กรอกรหัสถูก (เอกสาร admins/{uid} ถูกสร้างสำเร็จ)
+    function isAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    match /admins/{uid} {
+      allow get: if request.auth != null && request.auth.uid == uid;
+      allow create: if request.auth != null && request.auth.uid == uid
+                    && request.resource.data.pw == 'maniraknami';
+      allow delete: if request.auth != null && request.auth.uid == uid;
+    }
+
+    match /letters/{id} {
+      allow read: if true;
+      // เจ้าของสร้าง/แก้ได้เฉพาะจดหมายตัวเอง
+      allow create, update: if request.auth != null
+        && request.auth.uid == id
+        && request.resource.data.uid == id
+        && request.resource.data.sender is string && request.resource.data.sender.size() <= 30
+        && request.resource.data.msg is string && request.resource.data.msg.size() <= 900
+        && request.resource.data.photos is list && request.resource.data.photos.size() <= 5
+        && request.resource.data.flowers.size() <= 9
+        && request.resource.data.stickers.size() <= 8;
+      // ลบได้เฉพาะแอดมิน
+      allow delete: if isAdmin();
+    }
+  }
+}
