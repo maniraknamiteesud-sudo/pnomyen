@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>Congratulations พี่นม 🎓</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff3f8;--bg2:#ffdfec;--card:#ffffff;--ink:#5a2e44;--soft:#a6708a;--pink:#ff7fae;--pink2:#ffc2d9;--line:#ffd3e3;--dot:#ffd0e2;--shadow:rgba(255,110,165,.28);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2b1824;--bg2:#3d2132;--card:#402636;--ink:#ffe6ef;--soft:#e0a9c0;--line:#5e3549;--dot:#4b2b3c;--shadow:rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#2b1824;--bg2:#3d2132;--card:#402636;--ink:#ffe6ef;--soft:#e0a9c0;--line:#5e3549;--dot:#4b2b3c;--shadow:rgba(0,0,0,.4);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Mali','Sarabun','Noto Sans Thai',sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--ink);min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(var(--dot) 2.5px,transparent 2.5px);background-size:28px 28px;opacity:.7;pointer-events:none}
+.float{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.float span{position:absolute;bottom:-40px;opacity:.55;animation:up linear infinite}
+@keyframes up{to{transform:translateY(-110vh) rotate(60deg)}}
+main{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:0 16px 80px}
+.bunt{display:block;width:100%;max-width:560px;margin:0 auto}
+header{text-align:center;margin-bottom:10px}
+.congrats{font-family:'Pacifico',cursive;font-size:clamp(36px,11vw,68px);line-height:1.15;background:linear-gradient(90deg,#ff6fa3,#ffa6c9 50%,#ff6fa3);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 0 var(--card));margin-top:4px}
+.name{display:inline-block;margin-top:6px;background:var(--card);border:3px dashed var(--pink);border-radius:99px;padding:4px 24px 6px;font-size:clamp(26px,8vw,42px);font-weight:600;color:var(--ink);box-shadow:0 8px 20px var(--shadow)}
+.cap{display:inline-block;font-size:34px;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px) rotate(8deg)}}
+.sub{color:var(--soft);margin:14px 0 4px}
+.bar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0 8px}
+button{font-family:inherit;cursor:pointer}
+.btn{border:0;background:linear-gradient(180deg,#ff9cc2,#ff6fa3);color:#fff;padding:12px 24px;border-radius:99px;font-size:17px;font-weight:600;box-shadow:0 5px 0 #e0508a,0 10px 20px var(--shadow);transition:transform .1s}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #e0508a}
+.btn.ghost{background:var(--card);color:var(--ink);border:2px solid var(--pink2);box-shadow:0 4px 0 var(--pink2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:30px 14px;margin-top:18px}
+.cell{display:flex;flex-direction:column;align-items:center;gap:10px;position:relative}
+.sway{animation:sway 4.5s ease-in-out infinite;animation-delay:var(--d,0s);transform-origin:50% 0}
+@keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+.env{position:relative;width:156px;height:108px;border:0;background:none;padding:0;perspective:600px;margin-top:34px;transition:transform .25s}
+.env:hover{transform:translateY(-5px) scale(1.05)}
+.env .body{position:absolute;inset:0;background:linear-gradient(160deg,#ffd3e5,#ffb3cf);border-radius:10px;box-shadow:0 10px 20px var(--shadow);border:2px solid #fff}
+.env .paper{position:absolute;left:12px;right:12px;top:8px;height:84px;background-color:#fff;border-radius:4px;transition:transform .5s;background-image:repeating-linear-gradient(transparent 0 12px,#ffd9e6 12px 13px);border:1px solid #ffe0ec}
+.env i{position:absolute;inset:0;border-radius:10px;display:block}
+.env .f1{background:#ffc1d7;clip-path:polygon(0 0,52% 58%,0 100%)}
+.env .f2{background:#ffcadd;clip-path:polygon(100% 0,48% 58%,100% 100%)}
+.env .f3{background:#ffa8c7;clip-path:polygon(0 100%,50% 50%,100% 100%)}
+.env .flap{position:absolute;left:0;right:0;top:0;height:64px;background:linear-gradient(180deg,#ff9ec0,#ffb0cb);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .55s;z-index:3;border-radius:10px 10px 0 0}
+.env .seal{position:absolute;left:50%;top:42px;transform:translateX(-50%);width:30px;height:30px;border-radius:50%;background:#ff4f8b;color:#fff;font-size:17px;display:grid;place-items:center;z-index:4;box-shadow:0 3px 6px rgba(0,0,0,.25),inset 0 -3px 0 #d63a74;transition:opacity .3s}
+.env.open .flap{transform:rotateX(180deg);z-index:0;background:#ffc3d8}
+.env.open .paper{transform:translateY(-30px)}
+.env.open .seal{opacity:0}
+.env .stk{position:absolute;right:-10px;bottom:-12px;font-size:26px;z-index:5;transform:rotate(14deg);filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff)}
+.from{background:var(--card);border:2px solid var(--pink2);border-radius:99px;padding:3px 14px;font-size:14px;text-align:center;word-break:break-word;max-width:170px;box-shadow:0 3px 0 var(--pink2)}
+.new{position:absolute;top:22px;right:4px;background:#ff4f8b;color:#fff;font-size:11px;padding:2px 9px;border-radius:99px;z-index:6;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{transform:scale(1.15)}}
+.mini{border:0;background:none;color:var(--soft);font-size:13px;padding:2px 6px}
+.mini.del{color:#e0457b}
+.empty{text-align:center;color:var(--soft);padding:50px 10px;font-size:18px}
+.ov{position:fixed;inset:0;background:rgba(110,30,70,.55);backdrop-filter:blur(3px);z-index:20;overflow:auto;padding:calc(18px + env(safe-area-inset-top,0px)) 12px calc(30px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;align-items:flex-start}
+.sheet{position:relative;width:100%;max-width:540px;background:var(--card);border-radius:24px;padding:14px 12px 18px;box-shadow:0 20px 50px rgba(0,0,0,.35);animation:pop .4s cubic-bezier(.2,1.3,.4,1)}
+@keyframes pop{from{transform:scale(.8) translateY(30px);opacity:0}}
+.x{position:absolute;top:6px;right:10px;border:0;background:var(--card);border-radius:50%;width:34px;height:34px;font-size:22px;color:var(--soft);z-index:9;box-shadow:0 2px 6px var(--shadow)}
+.letter{position:relative;margin:26px 16px 10px;padding:30px 20px 24px;border-radius:8px;color:#5a2e44;box-shadow:0 8px 20px rgba(255,120,170,.3);background-image:repeating-linear-gradient(transparent 0 27px,rgba(255,127,174,.28) 27px 28px);animation:slide .6s .15s backwards}
+@keyframes slide{from{transform:translateY(40px);opacity:0}}
+.letter::before{content:"";position:absolute;top:-12px;left:50%;width:96px;height:24px;transform:translateX(-50%) rotate(-2deg);background:repeating-linear-gradient(45deg,rgba(255,168,200,.85) 0 8px,rgba(255,255,255,.7) 8px 16px);border-radius:2px}
+.letter .st{position:absolute;font-size:38px;pointer-events:none;filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 4px 4px rgba(0,0,0,.18))}
+.letter .to{font-size:20px;font-weight:600;color:#e0457b;margin-bottom:8px}
+.letter .msg{white-space:pre-wrap;line-height:28px;font-size:16px;word-break:break-word}
+.letter .sig{text-align:right;margin-top:16px;font-size:17px}
+.div{text-align:center;color:#ff9ec0;letter-spacing:6px;margin:12px 0}
+.pols{display:flex;flex-wrap:wrap;gap:16px 12px;justify-content:center;margin:20px 0 10px}
+.pol{position:relative;background:#fff;padding:7px 7px 16px;box-shadow:0 5px 12px rgba(0,0,0,.2);width:calc(50% - 10px);max-width:200px}
+.pol::before{content:"";position:absolute;top:-9px;left:50%;width:50px;height:16px;transform:translateX(-50%) rotate(-4deg);background:rgba(255,182,213,.8)}
+.pol img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover}
+.mus{display:flex;align-items:center;gap:12px;background:#fff;border:2px dashed #ff9ec0;border-radius:16px;padding:8px 14px;margin:14px 0;color:#5a2e44;text-decoration:none}
+.mus .disc{font-size:32px;animation:spin 4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bqw{text-align:center;margin-top:8px}
+.bqw small{display:block;color:#a6708a}
+.bq{width:260px;max-width:100%;height:auto;display:block;margin:0 auto;filter:drop-shadow(0 6px 6px rgba(255,110,165,.25))}
+.sec{background:var(--bg);border-radius:16px;padding:4px 12px 12px;margin-top:10px}
+.lab{display:block;font-weight:600;margin:12px 0 6px}
+input[type=text],input[type=url],input[type=password],textarea{width:100%;font-family:inherit;font-size:16px;padding:10px 12px;border:2px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink)}
+textarea{min-height:130px;resize:vertical}
+.pick{display:flex;flex-wrap:wrap;gap:6px}
+.pick button{font-size:26px;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:4px 8px;line-height:1.2}
+.pick button.on{border-color:var(--pink);background:var(--pink2)}
+.pick .col{width:34px;height:34px;border-radius:50%;padding:0;font-size:0;border:3px solid var(--line)}
+.pick .col.on{border-color:var(--pink);transform:scale(1.15)}
+.pick .fb{display:flex;flex-direction:column;align-items:center;font-size:11px;width:62px;padding:4px 2px;color:var(--ink)}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.thumbs div{position:relative}
+.thumbs img{width:64px;height:64px;object-fit:cover;border-radius:10px;border:2px solid #fff;box-shadow:0 2px 6px var(--shadow)}
+.thumbs button{position:absolute;top:-6px;right:-6px;border:0;background:#ff4f8b;color:#fff;border-radius:50%;width:22px;height:22px;font-size:13px}
+.note{font-size:13px;color:var(--soft)}
+.player{position:fixed;left:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:25;display:flex;align-items:center;gap:10px;background:var(--card);border:2px solid var(--pink2);border-radius:99px;padding:6px 8px 6px 12px;box-shadow:0 6px 16px var(--shadow);font-size:12px;line-height:1.3;max-width:calc(100% - 24px)}
+.player .pd{font-size:26px}.player.on .pd{animation:spin 4s linear infinite}
+.player button{border:0;background:var(--pink);color:#fff;width:36px;height:36px;border-radius:50%;font-size:13px;flex:none}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#5a2e44;color:#fff;padding:10px 18px;border-radius:99px;z-index:50;max-width:90%;text-align:center}
+</style>
+</head>
+<body>
+<div class="float" id="fl"></div>
+<main>
+  <svg class="bunt" id="bunt" viewBox="0 0 400 56" aria-hidden="true"></svg>
+  <header>
+    <div class="cap">🎓</div>
+    <div class="congrats">Congratulations</div>
+    <div class="name" id="nm">🎀 พี่นม 🎀</div>
+    <p class="sub" id="sub">ฝากความรักและคำอวยพรไว้ในซองจดหมาย 💌</p>
+  </header>
+  <div class="bar" id="bar"></div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" hidden></div>
+  <p class="note" style="text-align:center;margin-top:40px"><button class="mini" id="al"></button></p>
+</main>
+<div id="modal"></div>
+<div class="player" id="pl"><span class="pd">💿</span><span><b>ข้างกาย (With You)</b><br>Safeplanet</span><button id="pb" aria-label="เล่นหรือหยุดเพลง">▶</button><audio id="au" src="song.mp3" loop preload="auto"></audio></div>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {getAuth,signInAnonymously,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import {getFirestore,collection,doc,getDoc,setDoc,deleteDoc,onSnapshot} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+// ====== ใส่ค่าจาก Firebase Console (Project settings > Your apps > Web) ======
+const firebaseConfig={apiKey:"YOUR_API_KEY",authDomain:"YOUR_PROJECT.firebaseapp.com",projectId:"YOUR_PROJECT",appId:"YOUR_APP_ID"};
+// ============================================================================
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const STICKERS=['🧸','🐰','🐻','🐱','🐶','🐥','🐼','🦄','🦋','🎀','🎓','⭐','💖','☁️','🍓','🧁','🎈','✨'];
+const PAPERS=['#ffffff','#ffeef4','#ffdce9','#fff3e3','#f4e9ff'];
+const SLOTS=[[-9,-3],[88,-4],[-10,30],[91,36],[-9,64],[90,70],[10,96],[72,97]];
+// ---------- flowers (SVG) ----------
+const P=(n,rx,ry,cy,fill,st)=>Array.from({length:n},(_,i)=>`<ellipse rx="${rx}" ry="${ry}" cy="${cy}" transform="rotate(${i*360/n})" fill="${fill}"${st?` stroke="${st}" stroke-width="1"`:''}/>`).join('');
+const FD={
+ sakura:{n:'ซากุระ',s:()=>P(5,9,12,-11,'#ffc6dc','#ff9ec0')+'<circle r="4" fill="#ff7fb0"/><path d="M0 0v-6M0 0l5-3M0 0l-5-3M0 0l3 5M0 0l-3 5" stroke="#e0457b" stroke-width="1.2" stroke-linecap="round"/>'},
+ rose:{n:'กุหลาบ',s:()=>'<circle r="20" fill="#e8467c"/>'+P(5,10,9,-10,'#ff6b9a','#c2185b')+'<circle r="9" fill="#ff7fa9" stroke="#c2185b" stroke-width="1.2"/><path d="M-5 0a5 5 0 1 1 5 5" fill="none" stroke="#c2185b" stroke-width="1.6" stroke-linecap="round"/>'},
+ tulip:{n:'ทิวลิป',s:()=>'<g transform="translate(0 12)"><path d="M-15-4Q-18-28-7-32Q0-22 0-22Q0-22 7-32Q18-28 15-4Q0 12-15-4Z" fill="#ff8fb7" stroke="#e0457b" stroke-width="1"/><path d="M-6-4Q-5-24 0-26Q5-24 6-4Q0 4-6-4Z" fill="#ffc2d9"/></g>'},
+ sunflower:{n:'ทานตะวัน',s:()=>P(14,4.5,11,-14,'#ffc928','#f0a500')+'<g transform="rotate(13)">'+P(14,4,9,-12,'#ffe27a')+'</g><circle r="9.5" fill="#7a4a2b"/><circle r="5" fill="none" stroke="#b57a4c" stroke-width="2" stroke-dasharray="1.5 2.5"/>'},
+ daisy:{n:'เดซี่',s:()=>P(10,4.6,11,-12,'#fff','#ffd0e2')+'<circle r="6" fill="#ffc83d"/>'},
+ lavender:{n:'ลาเวนเดอร์',s:()=>'<g transform="translate(0 10)">'+[-14,0,14].map(r=>`<g transform="rotate(${r})">${[0,1,2,3,4].map(i=>`<ellipse cy="${-24+i*7}" rx="${4.6-i*.4}" ry="5.6" fill="${i%2?'#9d7fe6':'#b79cf2'}"/>`).join('')}</g>`).join('')+'</g>'},
+ hibiscus:{n:'ชบา',s:()=>P(5,12,14,-12,'#ff7aa8','#e0457b')+'<circle r="5" fill="#c2185b"/><path d="M0 0L9-14" stroke="#ffd23f" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="-14" r="2.6" fill="#ffd23f"/>'},
+ lotus:{n:'บัว',s:()=>'<g transform="translate(0 14)">'+[-72,72,-48,48,-24,24,0].map(r=>`<path transform="rotate(${r})" d="M0 0Q-9-14 0-30Q9-14 0 0Z" fill="${Math.abs(r)>40?'#ffc6dc':'#ffe3ee'}" stroke="#ff9ec0" stroke-width="1"/>`).join('')+'</g>'},
+ gypsy:{n:'ยิปโซ',s:()=>[[0,0],[-10,-6],[10,-6],[-6,8],[7,8],[-16,4],[16,3],[0,-14]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="#fff" stroke="#ead7e2"/><circle cx="${p[0]}" cy="${p[1]}" r="1.3" fill="#ffd23f"/>`).join('')},
+ wheat:{n:'รวงข้าว',s:()=>'<g transform="translate(0 6)">'+[0,1,2,3,4].map(i=>`<ellipse cx="-5" cy="${-22+i*7}" rx="3" ry="6" transform="rotate(-28 -5 ${-22+i*7})" fill="#e6b85c"/><ellipse cx="5" cy="${-22+i*7}" rx="3" ry="6" transform="rotate(28 5 ${-22+i*7})" fill="#f0c874"/>`).join('')+'<ellipse cy="-30" rx="3" ry="6" fill="#e6b85c"/></g>'},
+ leaf:{n:'ใบไม้',s:()=>'<ellipse rx="7" ry="17" transform="rotate(-35)" fill="#86c98a"/><ellipse rx="7" ry="17" transform="rotate(35)" fill="#6fbf7a"/>'}
+};
+const FKEYS=Object.keys(FD);
+const LEG={'🌸':'sakura','🌹':'rose','🌷':'tulip','🌻':'sunflower','🌼':'daisy','🪻':'lavender','🌺':'hibiscus','🪷':'lotus','💮':'gypsy','🌾':'wheat','🌿':'leaf'};
+const HP=[[130,72],[90,92],[170,92],[62,126],[198,126],[112,114],[148,114],[84,146],[176,146]];
+function bouquet(f){
+  f=(f||[]).map(x=>LEG[x]||x).filter(k=>FD[k]);if(!f.length)return'';
+  const lv=[-62,-34,34,62].map((r,i)=>`<ellipse cx="130" cy="130" rx="12" ry="46" transform="rotate(${r} 130 200)" fill="${i%2?'#7bc686':'#93d49c'}"/>`).join('');
+  const st=f.map((k,i)=>`<path d="M130 220Q${(130+HP[i][0])/2} ${(220+HP[i][1])/2+14} ${HP[i][0]} ${HP[i][1]}" stroke="#6fbf7a" stroke-width="4" fill="none" stroke-linecap="round"/>`).join('');
+  const hd=f.map((k,i)=>({k,i})).sort((a,b)=>HP[a.i][1]-HP[b.i][1]).map(o=>`<g transform="translate(${HP[o.i][0]} ${HP[o.i][1]}) rotate(${(o.i*37%46)-23}) scale(${(.95+(o.i*7%3)*.08).toFixed(2)})">${FD[o.k].s()}</g>`).join('');
+  const dots=[[104,196],[150,200],[128,228],[120,176],[142,180]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#fff" opacity=".85"/>`).join('');
+  return `<div class="bqw"><svg class="bq" viewBox="0 0 260 262" aria-label="ช่อดอกไม้">${lv}${st}
+  <path d="M50 150Q130 178 210 150L150 252Q130 260 110 252Z" fill="#ffa3c4"/>
+  <path d="M66 168Q130 194 194 168L148 252Q130 258 112 252Z" fill="#ffd9e8"/>${dots}${hd}
+  <path d="M130 204Q100 182 98 206Q104 220 130 204Z" fill="#ff4f8b"/><path d="M130 204Q160 182 162 206Q156 220 130 204Z" fill="#ff6fa3"/>
+  <path d="M126 208L112 240L122 235L127 246Z" fill="#e0457b"/><path d="M134 208L148 240L138 235L133 246Z" fill="#e0457b"/><circle cx="130" cy="205" r="7" fill="#d63a74"/></svg><small>ช่อดอกไม้ที่ทำเอง 💐</small></div>`}
+// ---------- state ----------
+let authError='',db=null,uid=null,isAdmin=false,letters=[],cfg={name:'พี่นม'},ready=false,armed=null;
+let readMap={};try{readMap=JSON.parse(localStorage.getItem('rd')||'{}')}catch(e){}
+const saveRead=()=>{try{localStorage.setItem('rd',JSON.stringify(readMap))}catch(e){}};
+const isRead=l=>readMap[l.id]===(l.ts||0);
+function toast(t){const d=document.createElement('div');d.className='toast';d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),2800)}
+$('#fl').innerHTML=Array.from({length:16},(_,i)=>`<span style="left:${(i*7+3)%100}%;font-size:${16+(i%4)*6}px;animation-duration:${14+(i%5)*4}s;animation-delay:-${i*2}s">${['🌸','💗','🤍','🎀','✨','🌷'][i%6]}</span>`).join('');
+(function(){let s='<path d="M0 4Q200 30 400 4" fill="none" stroke="#ffa6c8" stroke-width="2"/>';const cs=['#ff8fb7','#ffffff','#ffc2d9'];for(let i=0;i<9;i++){const x=22+i*44.5,t=x/400,y=4*(1-t)**2+60*t*(1-t)+4*t*t;s+=`<polygon points="${x-16},${y} ${x+16},${y} ${x},${y+30}" fill="${cs[i%3]}" stroke="#ffa6c8" stroke-width="1.5" stroke-linejoin="round"/>`}$('#bunt').innerHTML=s})();
+// ---------- render ----------
+function render(){
+  const g=$('#grid'),e=$('#empty');
+  $('#nm').textContent='🎀 '+cfg.name+' 🎀';document.title='Congratulations '+cfg.name+' 🎓';
+  const unread=letters.filter(l=>!isRead(l)).length;
+  $('#sub').textContent=letters.length?`มีจดหมาย ${letters.length} ฉบับ · ยังไม่ได้เปิด ${unread} ฉบับ 💌`:'ฝากความรักและคำอวยพรไว้ในซองจดหมาย 💌';
+  const mine=letters.find(l=>l.id===uid);
+  $('#bar').innerHTML=(db&&uid?`<button class="btn" id="wr">${mine?'✏️ แก้ไขจดหมายของฉัน':'💌 เขียนจดหมาย'}</button>`:(db&&authError?`<div class="note" style="max-width:420px">⚠️ เขียนจดหมายยังไม่ได้: ${esc(authError)}</div>`:''));
+  if($('#wr'))$('#wr').onclick=()=>editor(mine);
+  e.hidden=!!letters.length;
+  if(!letters.length)e.textContent=ready?'ยังไม่มีจดหมาย มาเป็นคนแรกกันเถอะ 🌷':'กำลังโหลด… 🌸';
+  g.innerHTML=letters.map((l,i)=>{const r=isRead(l);return `<div class="cell">${r?'':'<span class="new">ใหม่!</span>'}
+  <div class="sway" style="--d:-${(i*0.7)%4}s"><button class="env ${r?'open':''}" data-o="${esc(l.id)}" aria-label="จดหมายจาก ${esc(l.sender)}"><div class="body"></div><div class="paper"></div><i class="f1"></i><i class="f2"></i><i class="f3"></i><div class="flap"></div><div class="seal">♥</div>${(l.stickers||[])[0]?`<span class="stk">${l.stickers[0]}</span>`:''}</button></div>
+  <div class="from">💌 จาก ${esc(l.sender)}</div>
+  ${isAdmin?`<button class="mini del" data-d="${esc(l.id)}">${armed===l.id?'แตะอีกครั้งเพื่อลบ':'🗑 ลบ'}</button>`:''}</div>`}).join('');
+  g.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>openLetter(b.dataset.o));
+  g.querySelectorAll('[data-d]').forEach(b=>b.onclick=async()=>{const id=b.dataset.d;if(armed!==id){armed=id;render();setTimeout(()=>{if(armed===id){armed=null;render()}},4000);return}armed=null;try{await dbDelete(id);toast('ลบแล้ว')}catch(er){toast('ลบไม่ได้')}});
+}
+function letterHTML(l){
+  const st=(l.stickers||[]).map((s,i)=>`<span class="st" style="left:${SLOTS[i%8][0]}%;top:${SLOTS[i%8][1]}%;transform:rotate(${(i*37%40)-20}deg)">${s}</span>`).join('');
+  const ph=(l.photos||[]).length?`<div class="pols">${l.photos.map((p,i)=>`<div class="pol" style="transform:rotate(${[-4,3,-2,4,-3][i%5]}deg)"><img src="${esc(p)}" alt=""></div>`).join('')}</div>`:'';
+  const ok=/^https?:\/\//.test((l.music&&l.music.u)||'');
+  const m=l.music&&l.music.t?(ok?`<a class="mus" href="${esc(l.music.u)}" target="_blank" rel="noopener noreferrer">`:'<div class="mus">')+`<span class="disc">💿</span><span><b>🎵 ${esc(l.music.t)}</b>${l.music.a?'<br>'+esc(l.music.a):''}${ok?'<br><small>แตะเพื่อฟังเพลง ▶</small>':''}</span>`+(ok?'</a>':'</div>'):'';
+  return `<div class="letter" style="background-color:${esc(l.paper||'#fff')}">${st}<div class="to">ถึง ${esc(cfg.name)} 💕</div><div class="msg">${esc(l.msg)}</div>${ph}<div class="div">♡ ♡ ♡</div>${m}${bouquet(l.flowers)}<div class="sig"><b>${esc(l.sender)}</b> 🌷</div></div>`}
+function showModal(inner){const m=$('#modal');m.innerHTML=`<div class="ov"><div class="sheet"><button class="x" aria-label="ปิด">×</button>${inner}</div></div>`;m.querySelector('.x').onclick=closeM;m.querySelector('.ov').onclick=e=>{if(e.target.classList.contains('ov')&&!m.querySelector('[data-edit]'))closeM()}}
+function closeM(){$('#modal').innerHTML=''}
+function openLetter(id){const l=letters.find(x=>x.id===id);if(!l)return;readMap[id]=l.ts||0;saveRead();showModal(letterHTML(l));render()}
+function editor(ex){
+  const d=ex?JSON.parse(JSON.stringify(ex)):{sender:'',msg:'',photos:[],music:{t:'',a:'',u:''},flowers:[],stickers:[],paper:'#ffeef4'};
+  d.music=d.music||{t:'',a:'',u:''};d.flowers=(d.flowers||[]).map(x=>LEG[x]||x).filter(k=>FD[k]);
+  showModal(`<div data-edit style="padding:8px 6px 0"><h3 style="margin:6px 0 0">${ex?'แก้ไขจดหมาย':'เขียนจดหมายใหม่'} 💌</h3>
+  <div class="sec"><span class="lab">1 · จากใคร 🌸 (ชื่อที่จะโชว์บนซอง)</span><input type="text" id="f_s" maxlength="30" value="${esc(d.sender)}"></div>
+  <div class="sec"><span class="lab">2 · ข้อความถึง${esc(cfg.name)} 💕</span><textarea id="f_m" maxlength="900">${esc(d.msg)}</textarea></div>
+  <div class="sec"><span class="lab">3 · รูปภาพ 📷 (1–5 รูป) <span class="note" id="pc"></span></span><input type="file" id="f_p" accept="image/*" multiple><div class="thumbs" id="th"></div></div>
+  <div class="sec"><span class="lab">4 · เพลงฝากถึงพี่ 🎵</span><input type="text" id="f_mt" placeholder="ชื่อเพลง" maxlength="60" value="${esc(d.music.t)}" style="margin-bottom:6px"><input type="text" id="f_ma" placeholder="ศิลปิน" maxlength="60" value="${esc(d.music.a)}" style="margin-bottom:6px"><input type="url" id="f_mu" placeholder="ลิงก์เพลง YouTube / Spotify (ไม่ใส่ก็ได้)" value="${esc(d.music.u)}"></div>
+  <div class="sec"><span class="lab">5 · DIY ช่อดอกไม้ 💐 <span class="note" id="fc"></span></span><div class="pick" id="fp">${FKEYS.map(k=>`<button type="button" class="fb" data-f="${k}"><svg viewBox="-32 -38 64 64" width="44" height="44">${FD[k].s()}</svg>${FD[k].n}</button>`).join('')}</div><p style="margin:6px 0"><button type="button" class="mini" id="fu">↩︎ ลบดอกล่าสุด</button></p><div id="fv"></div></div>
+  <div class="sec"><span class="lab">6 · สีกระดาษ 🎨</span><div class="pick" id="pp">${PAPERS.map(p=>`<button type="button" class="col" data-c="${p}" style="background:${p}">${p}</button>`).join('')}</div>
+  <span class="lab">สติกเกอร์/ตุ๊กตา 🧸 (สูงสุด 8)</span><div class="pick" id="sp">${STICKERS.map(s=>`<button type="button" data-s="${s}">${s}</button>`).join('')}</div></div>
+  <p style="display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 6px"><button type="button" class="btn ghost" id="pv">👀 ดูตัวอย่าง</button><button type="button" class="btn" id="sv">ส่งจดหมาย 💗</button></p></div>`);
+  const gather=()=>{d.sender=$('#f_s').value.trim();d.msg=$('#f_m').value;d.music={t:$('#f_mt').value.trim(),a:$('#f_ma').value.trim(),u:$('#f_mu').value.trim()}};
+  const draw=()=>{
+    $('#th').innerHTML=d.photos.map((p,i)=>`<div><img src="${esc(p)}" alt=""><button type="button" data-r="${i}">×</button></div>`).join('');
+    $('#th').querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{d.photos.splice(+b.dataset.r,1);draw()});
+    $('#pc').textContent=`(${d.photos.length}/5)`;$('#fc').textContent=`(${d.flowers.length}/9)`;
+    $('#fv').innerHTML=bouquet(d.flowers);
+    document.querySelectorAll('#pp .col').forEach(b=>b.classList.toggle('on',b.dataset.c===d.paper));
+    document.querySelectorAll('#sp [data-s]').forEach(b=>b.classList.toggle('on',d.stickers.includes(b.dataset.s)));
+  };
+  document.querySelectorAll('#fp [data-f]').forEach(b=>b.onclick=()=>{if(d.flowers.length<9){d.flowers.push(b.dataset.f);draw()}else toast('ช่อเต็มแล้ว 💐')});
+  $('#fu').onclick=()=>{d.flowers.pop();draw()};
+  document.querySelectorAll('#pp .col').forEach(b=>b.onclick=()=>{d.paper=b.dataset.c;draw()});
+  document.querySelectorAll('#sp [data-s]').forEach(b=>b.onclick=()=>{const s=b.dataset.s,i=d.stickers.indexOf(s);if(i>=0)d.stickers.splice(i,1);else if(d.stickers.length<8)d.stickers.push(s);else toast('ครบ 8 ชิ้นแล้ว');draw()});
+  $('#f_p').onchange=async e=>{for(const f of [...e.target.files]){if(d.photos.length>=5){toast('ใส่ได้ไม่เกิน 5 รูป');break}try{d.photos.push(await shrink(f))}catch(er){toast('อ่านรูปไม่ได้')}}e.target.value='';draw()};
+  $('#pv').onclick=()=>{gather();const keep=JSON.parse(JSON.stringify(d));showModal(letterHTML({...keep,sender:keep.sender||'ชื่อของคุณ',msg:keep.msg||'…'})+`<p style="text-align:center"><button class="btn" id="bk">← กลับไปแก้</button></p>`);$('#bk').onclick=()=>editor(keep)};
+  $('#sv').onclick=async()=>{gather();
+    if(!d.sender)return toast('ใส่ชื่อก่อนนะ 🌸');if(!d.msg.trim())return toast('เขียนข้อความก่อนนะ 💌');
+    if(!d.photos.length)return toast('ใส่รูปอย่างน้อย 1 รูปนะ 📷');
+    if(d.photos.join('').length>200000)return toast('รูปใหญ่เกินไป ลองลดจำนวนรูป');
+    if(d.music.u&&!/^https?:\/\//.test(d.music.u))return toast('ลิงก์เพลงต้องขึ้นต้นด้วย https://');
+    try{await dbSaveLetter({uid,sender:d.sender,msg:d.msg,photos:d.photos,music:d.music,flowers:d.flowers,stickers:d.stickers,paper:d.paper,ts:Date.now()});closeM();toast('ส่งจดหมายแล้ว 💗')}
+    catch(er){toast('บันทึกไม่ได้ — อาจยังไม่มีสิทธิ์เขียน')}};
+  draw();
+}
+function shrink(file){return new Promise((res,rej)=>{const u=URL.createObjectURL(file),im=new Image();im.onload=()=>{const M=380,k=Math.min(1,M/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);res(c.toDataURL('image/jpeg',.55))};im.onerror=rej;im.src=u})}
+function offline(e){ready=true;$('#empty').hidden=false;$('#empty').textContent='เชื่อมต่อฐานข้อมูลไม่ได้ 🌸'+(e&&e.code?' ('+e.code+')':' (หมดเวลารอ)')}
+render();
+async function dbDelete(id){await deleteDoc(doc(db,'letters',id))}
+async function dbSaveLetter(o){await setDoc(doc(db,'letters',uid),o)}
+async function checkAdmin(){isAdmin=false;if(uid){try{isAdmin=(await getDoc(doc(db,'admins',uid))).exists()}catch(e){}}$('#al').textContent=isAdmin?'🚪 ออกจากโหมดแอดมิน':'🔑 แอดมิน';render()}
+$('#al').textContent='🔑 แอดมิน';
+$('#al').onclick=async()=>{
+  if(isAdmin){try{await deleteDoc(doc(db,'admins',uid))}catch(e){}checkAdmin();return}
+  showModal('<span class="lab">🔑 รหัสแอดมิน (สำหรับลบจดหมาย)</span><input type="password" id="ap" autocomplete="off"><p><button class="btn" id="ao">เข้าสู่โหมดแอดมิน</button></p>');
+  $('#ao').onclick=async()=>{try{await setDoc(doc(db,'admins',uid),{pw:$('#ap').value});closeM();await checkAdmin();toast('เข้าโหมดแอดมินแล้ว 🔓')}catch(e){toast('รหัสไม่ถูกต้อง')}}};
+// ---- music ----
+const au=$('#au'),pb=$('#pb');let userPaused=false;
+const sync=()=>{const on=!au.paused;$('#pl').classList.toggle('on',on);pb.textContent=on?'❚❚':'▶'};
+au.addEventListener('play',sync);au.addEventListener('pause',sync);
+pb.addEventListener('pointerdown',e=>e.stopPropagation());
+pb.onclick=()=>{if(au.paused){userPaused=false;au.play().catch(()=>{})}else{userPaused=true;au.pause()}};
+au.play().catch(()=>{document.addEventListener('pointerdown',()=>{if(!userPaused&&au.paused)au.play().catch(()=>{})},{once:true})});
+// ---- firebase ----
+const app=initializeApp(firebaseConfig),auth=getAuth(app);
+db=getFirestore(app);
+onAuthStateChanged(auth,u=>{uid=u?u.uid:null;checkAdmin()});
+(async()=>{try{await auth.authStateReady();if(!auth.currentUser)await signInAnonymously(auth)}catch(e){authError=(e&&e.code)||String(e);render()}})();
+if(location.protocol==='file:'){authError='เปิดไฟล์จากเครื่องโดยตรงไม่ได้ ต้องเปิดผ่านลิงก์ github.io';render()}
+const tm=setTimeout(()=>{if(!ready)offline()},15000);
+onSnapshot(collection(db,'letters'),q=>{clearTimeout(tm);ready=true;letters=q.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.ts||0)-(b.ts||0));render()},e=>offline(e));
+</script>
+</body>
+</html>
